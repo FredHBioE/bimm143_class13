@@ -60,36 +60,3 @@ GG <- t[t$geno == "G/G", ]
 #boxplot(AA$exp, AG$exp, GG$exp,)
 boxplot(exp ~ geno, data = t)
 ```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
