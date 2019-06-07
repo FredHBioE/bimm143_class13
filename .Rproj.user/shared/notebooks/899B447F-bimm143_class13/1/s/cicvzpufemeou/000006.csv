@@ -1,0 +1,3 @@
+"0","AA <- t[t$geno == ""A/A"", ]"
+"0","AG <- t[t$geno == ""A/G"" || t$geno == ""G/A"", ]"
+"0","GG <- t[t$geno == ""G/G"", ]"

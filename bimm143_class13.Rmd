@@ -1,0 +1,95 @@
+---
+title: "bimm143_class13"
+author: "Fangchao He"
+date: "5/14/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Sample genotypes in the MXL 1000 Genome project data
+
+Here we focus on the Mexican ancestry in Los Angeles, California (MXL) population
+
+What proportion of the Mexican Ancestry in Los Angeles sample population (MXL) are homozygous for the asthma associated SNP (G|G)?
+
+```{r}
+# Read CSV from ENSEMBLE
+mxl <- read.csv("373531-SampleGenotypes-Homo_sapiens_Variation_Sample_rs8067378.csv")
+head(mxl)
+
+```
+
+```{r}
+table(mxl$Genotype..forward.strand.)
+```
+
+Proportion or percent of total for each genotype
+```{r}
+(table(mxl$Genotype..forward.strand.) / nrow(mxl)) * 100
+```
+
+# Quality Scores in FASTQ files
+
+The fourth line of a FASTQ sequence format file encodes the quality score that tells us how good the sequence at a given position is (i.e. how likely it is to be correct based on the instrument)
+```{r}
+library(seqinr)
+library(gtools)
+asc(s2c("DDDDCDEDCDDDDBBDDDCC@")) - 33
+#phred < asc
+
+```
+
+```{r}
+t <- read.table("rs8067378_ENSG00000172057.6.txt")
+head(t)
+```
+
+```{r}
+summary(t)
+```
+
+```{r}
+AA <- t[t$geno == "A/A", ]
+AG <- t[t$geno == "A/G" || t$geno == "G/A", ]
+GG <- t[t$geno == "G/G", ]
+```
+
+```{r}
+#boxplot(AA$exp, AG$exp, GG$exp,)
+boxplot(exp ~ geno, data = t)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

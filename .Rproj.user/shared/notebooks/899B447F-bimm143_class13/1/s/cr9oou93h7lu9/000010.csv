@@ -1,0 +1,2 @@
+"0","#boxplot(AA$exp, AG$exp, GG$exp,)"
+"0","boxplot(exp ~ geno, data = t)"
